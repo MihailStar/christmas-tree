@@ -1,0 +1,29 @@
+body
+  display flex
+  align-items center
+  justify-content center
+  min-height 100vh
+  margin 0
+
+.christmas-tree
+  &__row
+    display flex
+
+    &:not(:last-child)
+      margin-bottom 1px
+
+  &__branch
+    width 8px
+    height 8px
+    background-color #008000
+    border-radius 50%
+    transition background-color 300ms
+
+    &:not(:last-child)
+      margin-right 1px
+
+    &_invisible
+      background-color transparent
+
+    &_ignited
+      background-color #ff0000

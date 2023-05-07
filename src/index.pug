@@ -1,0 +1,17 @@
+-
+  const numberOfParts = 7
+
+.christmas-tree
+  each _, numberOfPartsIndex in Array(numberOfParts)
+    -
+      const rows = Array(numberOfPartsIndex + 1)
+      const branchs = Array(numberOfParts * 2 - 1)
+      const middleBranchIndex = Math.floor(branchs.length / 2)
+
+    each y, yIndex in rows
+      .christmas-tree__row
+        each x, xIndex in branchs
+          if xIndex < middleBranchIndex - yIndex || xIndex > middleBranchIndex + yIndex
+            .christmas-tree__branch.christmas-tree__branch_invisible
+          else
+            .christmas-tree__branch
